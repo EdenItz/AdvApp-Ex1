@@ -8,6 +8,7 @@ html {
     margin: 0;
     background-color: #15202b;
     color: white;
+    direction: rtl;
 }
 
 a {
@@ -45,4 +46,24 @@ a {
     html {
         font-size: 10px;
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #b2b2b2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(85, 85, 85, 0.612);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.612);
 }

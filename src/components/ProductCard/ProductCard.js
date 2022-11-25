@@ -1,11 +1,21 @@
 import React from 'react';
+import './ProductCard.css';
 
-function ProductCard({ name, price, images }) {
+function ProductCard({ name, price, currency, images }) {
     return (
         <div className="product-card">
-            <img src={images && images[0]} alt="img not found" />
-            <p>{name}</p>
-            <p>{price}</p>
+            <div className="product-info">
+                <p>{name}</p>
+                <p className="product-price">
+                    {price} {currency}
+                </p>
+            </div>
+
+            <img
+                className="product-img"
+                src={images && images[0]}
+                alt="img not found"
+            />
         </div>
     );
 }

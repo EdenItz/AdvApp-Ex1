@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { productsJson } from '../../MockData/products';
 import ProductCard from '../ProductCard/ProductCard';
 
+import './ProductList.css';
+
 function ProductList() {
+    let navigate = useNavigate();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -10,10 +14,21 @@ function ProductList() {
         setProducts(productsJson);
     }, []);
 
+    const handleProductClick = id => {
+        if (!id) return;
+
+        navigate(`product/${id}`);
+    };
+
     return (
-        <div className="products-list center">
+        <div className="products-list">
             {products.map(product => (
-                <ProductCard key={product.id} {...product} />
+                <div
+                    key={product.id}
+                    onClick={() => handleProductClick(product.id)}
+                >
+                    <ProductCard {...product} />
+                </div>
             ))}
         </div>
     );
