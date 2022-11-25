@@ -14,7 +14,7 @@ function ProductCard({ name, price, currency, images }) {
             <img
                 className="product-img"
                 src={images && images[0]}
-                alt="img not found"
+                alt="תמונת מוצר"
             />
         </div>
     );
